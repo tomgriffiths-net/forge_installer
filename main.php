@@ -11,7 +11,7 @@ class forge_installer{
         foreach($defaultSettings as $settingName => $settingValue){
             settings::set($settingName,$settingValue,false);
         }
-    }//Run at startup
+    }
     public static function setSetting(string $settingName, mixed $settingValue, bool $overwrite):bool{
         return settings::set($settingName,$settingValue,$overwrite);
     }

@@ -1,9 +1,5 @@
 <?php
-//Your Settings can be read here: settings::read('myArray/settingName') = $settingValue;
-//Your Settings can be saved here: settings::set('myArray/settingName',$settingValue,$overwrite = true/false);
 class forge_installer{
-    //public static function command($line):void{}//Run when base command is class name, $line is anything after base command (string). e.g. > [base command] [$line]
-    //public static function init():void{}//Run at startup
     public static function downloadVersion(string $minecraftVersion, string $specialVersion):bool{
         return downloader::downloadFile(settings::read('url') . '/' . $minecraftVersion . '-' . $specialVersion . '/forge-' . $minecraftVersion . '-' . $specialVersion . '-installer.jar', settings::read('libraryDir') . '\\forge-' . $minecraftVersion . '-' . $specialVersion . '-installer.jar');
     }
@@ -44,200 +40,51 @@ class forge_installer{
     }
     public static function listVersions():array{
         return array(
-            "1.21.1"=>array(
-                "52.0.22"
-            ),
-            "1.21"=>array(
-                "51.0.33"
-            ),
-            "1.20.6"=>array(
-                "50.1.0"
-            ),
-            "1.20.4"=>array(
-                "49.1.0"
-            ),
-            "1.20.3"=>array(
-                "49.0.2"
-            ),
-            "1.20.2"=>array(
-                "48.1.0"
-            ),
-            "1.20.1"=>array(
-                "47.3.0"
-            ),
-            "1.20"=>array(
-                "46.0.14"
-            ),
-            "1.19.4"=>array(
-                "45.2.0"
-            ),
-            "1.19.3"=>array(
-                "44.1.0"
-            ),
-            "1.19.2"=>array(
-                "43.4.0"
-            ),
-            "1.19.1"=>array(
-                "42.0.9"
-            ),
-            "1.19"=>array(
-                "41.1.0"
-            ),
-            "1.18.2"=>array(
-                "40.2.0"
-            ),
-            /*
-            "1.18.1"=>array(
-                
-            ),
-            "1.18"=>array(
-                
-            ),
-            "1.17.1"=>array(
-                
-            ),
-            "1.16.5"=>array(
-                
-            ),
-            "1.16.4"=>array(
-                
-            ),
-            "1.16.3"=>array(
-                
-            ),
-            "1.16.2"=>array(
-                
-            ),
-            "1.16.1"=>array(
-                
-            ),
-            "1.16"=>array(
-                
-            ),
-            "1.15.2"=>array(
-                
-            ),
-            "1.15.1"=>array(
-                
-            ),
-            "1.15"=>array(
-                
-            ),
-            "1.14.4"=>array(
-                
-            ),
-            "1.14.3"=>array(
-                
-            ),
-            "1.14.2"=>array(
-                
-            ),
-            "1.13.2"=>array(
-                
-            ),*/
-            "1.12.2"=>array(
-                "14.23.5.2859"
-            ),
-            "1.12.1"=>array(
-                "14.22.1.2478"
-            ),
-            "1.12"=>array(
-                "14.21.1.2387"
-            ),
-            "1.11.2"=>array(
-                
-            ),
-            /*
-            "1.11"=>array(
-                
-            ),
-            "1.10.2"=>array(
-                
-            ),
-            "1.10"=>array(
-                
-            ),
-            "1.9.4"=>array(
-                
-            ),
-            "1.9"=>array(
-                
-            ),
-            "1.8.9"=>array(
-                
-            ),
-            "1.8.8"=>array(
-                
-            ),
-            "1.8"=>array(
-                
-            ),
-            "1.7.10"=>array(
-                
-            ),
-            "1.7"=>array(
-                
-            ),
-            "1.6.4"=>array(
-                
-            ),
-            "1.6.3"=>array(
-                
-            ),
-            "1.6.2"=>array(
-                
-            ),
-            "1.6.1"=>array(
-                
-            ),
-            "1.5.2"=>array(
-                
-            ),
-            "1.5.1"=>array(
-                
-            ),
-            "1.5"=>array(
-                
-            ),
-            "1.4.7"=>array(
-                
-            ),
-            "1.4.6"=>array(
-                
-            ),
-            "1.4.5"=>array(
-                
-            ),
-            "1.4.4"=>array(
-                
-            ),
-            "1.4.3"=>array(
-                
-            ),
-            "1.4.2"=>array(
-                
-            ),
-            "1.4.1"=>array(
-                
-            ),
-            "1.4.0"=>array(
-                
-            ),
-            "1.3.2"=>array(
-                
-            ),
-            "1.2.5"=>array(
-                
-            ),
-            "1.2.4"=>array(
-                
-            ),
-            "1.2.3"=>array(
-                
-            ),
-            "1.1"=>array(
-                
-            )*/
+            "1.21.4" => ["54.1.0"],
+            "1.21.3" => ["53.0.53"],
+            "1.21.1" => ["52.0.22"],
+            "1.21"   => ["51.0.33"],
+            "1.20.6" => ["50.1.0"],
+            "1.20.4" => ["49.1.0"],
+            "1.20.3" => ["49.0.2"],
+            "1.20.2" => ["48.1.0"],
+            "1.20.1" => ["47.3.0"],
+            "1.20"   => ["46.0.14"],
+            "1.19.4" => ["45.2.0"],
+            "1.19.3" => ["44.1.0"],
+            "1.19.2" => ["43.4.0"],
+            "1.19.1" => ["42.0.9"],
+            "1.19"   => ["41.1.0"],
+            "1.18.2" => ["40.2.0"],
+            "1.18.1" => ["39.1.0"],
+            "1.18"   => ["38.0.17"],
+            "1.17.1" => ["37.1.1"],
+            "1.16.5" => ["36.2.34"],
+            "1.16.4" => ["35.1.4"],
+            "1.16.3" => ["34.1.0"],
+            "1.16.2" => ["33.0.61"],
+            "1.16.1" => ["32.0.108"],
+            "1.15.2" => ["31.2.57"],
+            "1.15.1" => ["30.0.51"],
+            "1.15"   => ["29.0.4"],
+            "1.14.4" => ["28.2.26"],
+            "1.14.3" => ["27.0.60"],
+            "1.14.2" => ["26.0.63"],
+            "1.13.2" => ["25.0.223"],
+            "1.12.2" => ["14.23.5.2859"],
+            "1.12.1" => ["14.22.1.2478"],
+            "1.12"   => ["14.21.1.2387"],
+            "1.11.2" => ["13.20.1.2588"],
+            "1.11"   => ["13.19.1.2189"],
+            "1.10.2" => ["12.18.3.2511"],
+            "1.10"   => ["12.18.0.2000"],
+            "1.9.4"  => ["12.17.0.2317"],
+            "1.9"    => ["12.16.1.1887"],
+            "1.8.9"  => ["11.15.1.2318"],
+            "1.8.8"  => ["11.15.0.1655"],
+            "1.8"    => ["11.14.4.1563"],
+            "1.7.10" => ["10.13.4.1614"],
+            "1.7.2"  => ["10.12.2.1161"]
         );
     }
     public static function listSpecialVersions(string $version):array{
